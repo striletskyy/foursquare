@@ -60,6 +60,9 @@ var mapHelper = {
       mapHelper.marker.setMap(null);
       mapHelper.circle.setMap(null);
     }
+  },
+  _showRange: function() {
+
   }
 };
 /*****************************************************************************/

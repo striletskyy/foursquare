@@ -13,3 +13,14 @@ Router.route('/', {
   name: "home",
   Controller: 'HomeController'
 });
+
+Router.route('/login', {
+  name: "login",
+  action: function() {
+    if(App.helpers.accounts.isAllAuth()) {
+      this.render("Home");
+    } else {
+      this.render("Login");
+    }
+  }
+});

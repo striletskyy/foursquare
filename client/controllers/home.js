@@ -6,6 +6,10 @@ HomeController = RouteController.extend({
   },
 
   action: function () {
-    this.render("Home");
+    if(App.helpers.accounts.isAllAuth()) {
+      this.render("Home");
+    } else {
+      this.render("Login");
+    }
   }
 });

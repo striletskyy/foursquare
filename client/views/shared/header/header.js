@@ -11,12 +11,23 @@ Template.Header.events({
 });
 
 Template.Header.helpers({
-  /*
-   * Example: 
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  firstName: function() {
+    if(App.helpers.accounts.isAllAuth()) {
+      return Meteor.user().profile.firstName;
+    } else {
+      return null;
+    }
+  },
+  lastName: function() {
+    if(App.helpers.accounts.isAllAuth()) {
+      return Meteor.user().profile.lastName;
+    } else {
+      return null;
+    }
+  },
+  isAllAuth: function() {
+    return App.helpers.accounts.isAllAuth();
+  }
 });
 
 /*****************************************************************************/

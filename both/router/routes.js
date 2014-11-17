@@ -9,9 +9,7 @@ Router.configure({
   routeControllerNameConverter: 'upperCamelCase'
 });
 
-Router.map(function () {
-  /*
-    Example:
-      this.route('home', {path: '/'});
-  */
+Router.route('/', {
+  name: "home",
+  Controller: 'HomeController'
 });

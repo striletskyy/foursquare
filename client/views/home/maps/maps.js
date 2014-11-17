@@ -37,6 +37,7 @@ var mapHelper = {
   _clickListener: function(event) {
     mapHelper._clearPrev();
     var latLng = event.latLng;
+    mapHelper.ll = latLng;
     mapHelper.marker = new google.maps.Marker({
       position: latLng,
       map: mapHelper.map,
@@ -65,6 +66,7 @@ var mapHelper = {
 
   }
 };
+Template.Maps.mapHelper = mapHelper;
 /*****************************************************************************/
 /* Maps: Event Handlers and Helpers */
 /*****************************************************************************/
@@ -72,6 +74,7 @@ Template.Maps.events({
   'input #control-circle-radius-range': function() {
     $(circleInput).val($(controlCircle).val());
     mapHelper.circle.setRadius(parseInt($(controlCircle).val())/2);
+    mapHelper.radius = parseInt($(controlCircle).val())/2;
   }
 });
 

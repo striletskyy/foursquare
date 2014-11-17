@@ -13,3 +13,5 @@ accounts-google
 service-configuration
 mrt:googlemaps
 mrt:accounts-foursquare
+mrt:moment
+
